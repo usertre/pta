@@ -1,0 +1,31 @@
+#include<stdio.h>
+int judge(int x)
+{
+	int sum=0;
+	for(int i=1;i<=x/2;++i)
+	  if(x%i==0) sum+=i;
+	return sum==x;
+}
+void print(int x)
+{
+	int d[200],z=0;
+	for(int i=1;i<=x/2;++i)
+	  if(x%i==0) d[z++]=i;
+	printf("%d =",x);
+	for(int i=0;i<z;++i)
+	{
+		if(i!=z-1) printf(" %d +",d[i]);
+		else printf(" %d",d[i]);
+	}
+	printf("\n");
+	return ;
+}
+int main()
+{
+	int m,n,count=0;
+	scanf("%d%d",&m,&n);
+	for(int i=m;i<=n;++i)
+	  if(judge(i)) {print(i);count++;}
+	if(!count) printf("None");
+	return 0;
+}

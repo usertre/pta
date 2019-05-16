@@ -1,0 +1,50 @@
+#include<stdio.h>
+char a[11][11];int t[100][4],error;
+int judge(int q,int w,int e,int r)
+{
+	if(a[q][w]==a[e][r]&&a[q][w]!='*') return 1;
+	else return 0;
+}
+int main()
+{
+	int n,jjj;
+	scanf("%d",&n);jjj=2*2*n*n/2;
+	getchar();
+	for(int i=1;i<=2*n;++i)
+	  {
+	  	for(int j=1;j<=2*n;++j)
+	  	{
+	  		scanf("%c",&a[i][j]);
+	  		getchar();
+	  	}
+	  }
+	int m;
+	scanf("%d",&m);
+	for(int i=0;i<m;++i) for(int j=0;j<4;++j)scanf("%d",&t[i][j]);
+	for(int i=0;i<m;++i)
+	{
+		if(judge(t[i][0],t[i][1],t[i][2],t[i][3]))
+		{
+			a[t[i][0]][t[i][1]]='*';a[t[i][2]][t[i][3]]='*';
+			if(jjj>1)
+			for(int j=1;j<=2*n;++j)
+			{
+				for(int k=1;k<=2*n;++k)
+				{
+					if(k<2*n) printf("%c ",a[j][k]);
+					else printf("%c",a[j][k]);
+				}
+				printf("\n");
+			}
+			jjj--;
+			if(jjj==0) {printf("Congratulations!");break;}
+		}
+		else
+		{
+			printf("Uh-oh\n");
+			error++;
+			if(error==3) {printf("Game Over");break;}
+		}
+	}
+	return 0;
+}

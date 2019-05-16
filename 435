@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+	int m,n,a,b;
+	scanf("%d%d",&m,&n);
+	if(n>m) {int t=n;n=m;m=t;}
+	int q=m%n;
+	a=m;b=n;
+	while(q)
+	{
+		m=n;n=q;q=m%n;
+	}
+	printf("%d %d",n,n*(b/n)*(a/n));
+	return 0;
+}

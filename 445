@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main()
+{
+	double h;int n;
+	double a=0;
+	scanf("%lf%d",&h,&n);
+	a+=h;h/=2;
+	for(int i=1;i<n;++i) {a+=(2*h);h/=2;}
+	if(n) printf("%.1lf %.1lf",a,h);
+	else printf("0.0 0.0");
+	return 0;
+}

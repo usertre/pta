@@ -1,0 +1,7 @@
+double mypow( double x, int n )
+{
+	double z=1;
+	for(int i=1;i<=n;++i)
+	  z*=x;
+	return z;
+}

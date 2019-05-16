@@ -1,0 +1,13 @@
+#include<stdio.h>
+char a[100];
+int main()
+{
+	char b;int z=0;
+	while(scanf("%c",&b))
+	{
+		if(b=='\n') break;
+		else a[z++]=b;
+	}
+	for(int i=z-1;i>=0;--i) printf("%c",a[i]);
+	return 0;
+}

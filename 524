@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+	char a;int c=0;
+	while(scanf("%c",&a))
+	{
+		if(a=='\n') break;
+		if(a>'A'&&a<='Z')
+		  if(a!='E'&&a!='I'&&a!='O'&&a!='U') c++;
+	}
+	printf("%d",c);
+	return 0;
+}

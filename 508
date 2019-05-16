@@ -1,0 +1,27 @@
+#include<stdio.h>
+int t[1001];
+int main()
+{
+	int n,c=1,max=1,r;
+	scanf("%d",&n);
+	for(int i=0;i<n;++i) scanf("%d",&t[i]);
+	for(int i=0;i<n-1;++i)
+	  for(int j=i+1;j<n;++j)
+	    if(t[i]>t[j]) {int temp=t[i];t[i]=t[j];t[j]=temp;}
+	r=t[0];
+	for(int i=1;i<=n;++i)
+	{
+		if(t[i]==t[i-1]) c++;
+		else
+		{
+			if(c>max)
+			{
+				max=c;
+				r=t[i-1];
+			}
+			c=1;
+		}
+	}
+	printf("%d %d",r,max);
+	return 0;
+}

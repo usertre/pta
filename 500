@@ -1,0 +1,10 @@
+#include<stdio.h>
+int s[10];
+int main()
+{
+	int n,max=0xf0000000;
+	scanf("%d",&n);
+	for(int i=0;i<n;++i) {scanf("%d",&s[i]);if(s[i]>max) max=s[i];}
+	for(int i=0;i<n;++i)
+	  if(s[i]==max) {printf("%d %d",max,i);return 0;}
+} 

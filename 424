@@ -1,0 +1,29 @@
+#include<stdio.h>
+int a[5];
+int main()
+{
+  int n,m;
+  scanf("%d",&n);
+  for(int i=0;i<n;++i)
+  {
+    scanf("%d",&m);
+    if(m<60) a[4]++;
+    else
+    {
+      if(m<70) a[3]++;
+      else
+      {
+        if(m<80) a[2]++;
+        else
+        {
+          if(m<90) a[1]++;
+          else a[0]++;
+        }
+      }
+    }
+  }
+  printf("%d",a[0]);
+  for(int i=1;i<5;++i)
+    printf(" %d",a[i]);
+  return 0;
+}

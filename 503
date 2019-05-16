@@ -1,0 +1,23 @@
+#include<stdio.h>
+int t[10];
+int main()
+{
+	int n,m;
+	scanf("%d",&n);
+	for(int i=0;i<n;++i)
+	{
+		scanf("%d",&m);
+		while(m)
+		{
+			t[m%10]++;
+			m/=10;
+		}
+	}
+	int max=-1;
+	for(int i=0;i<=9;++i)
+	  if(t[i]>max) max=t[i];
+	printf("%d:",max);
+	for(int i=0;i<=9;++i)
+		if(t[i]==max) printf(" %d",i);
+	return 0;
+}

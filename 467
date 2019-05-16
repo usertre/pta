@@ -1,0 +1,25 @@
+int narcissistic( int number )
+{
+	int a[5],z=0,t=number;
+	while(number)
+	{
+		a[z++]=number%10;
+		number/=10;
+	}
+	int sum=0,p;
+	for(int i=0;i<z;++i)
+	  {
+	  	p=1;
+		for(int j=0;j<z;++j) p*=a[i];
+	  	sum+=p;
+	  }	
+	return sum==t;
+}
+void PrintN( int m, int n )
+{
+	for(int i=m+1;i<n;++i)
+	{
+		if(narcissistic(i)) printf("%d\n",i);
+	}
+	return;
+}

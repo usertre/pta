@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+	double eps,sum=0,c;int t=1,m=1;
+	scanf("%lf",&eps);
+	c=1/(m*1.0);
+	while(1)
+	{
+		if(t) sum+=c;
+		else sum-=c;
+		if(c<=eps) break;
+		m+=3;
+		c=1/(m*1.0);
+		if(t) t=0;
+		else t=1;
+	}
+	printf("sum = %.6lf",sum);
+	return 0;
+} 

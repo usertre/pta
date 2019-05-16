@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+	int a,b;double c;
+	scanf("%d%d",&a,&b);
+	if(a<(b+b/10)) printf("OK");
+	else
+	{
+		c=(a-b)*100/(b*1.0);
+		if(a<b*1.5) printf("Exceed %.0lf%%. Ticket 200",c);
+		else printf("Exceed %.0lf%%. License Revoked",c);
+	}
+	return 0;
+}

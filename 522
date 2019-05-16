@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char a,b;int index=-1,z=0;
+	scanf("%c",&b);
+	getchar();
+	while(scanf("%c",&a))
+	{
+		if(a=='\n') break;
+		else if(a==b) index=z;
+		z++;
+	}
+	if(index>=0) printf("index = %d",index);
+	else printf("Not Found");
+	return 0;
+}

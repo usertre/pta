@@ -1,0 +1,41 @@
+#include<stdio.h>
+int in[100][3],l,m,r,z=0;
+void dodo(int q,int w,int e)
+{
+	if(q>=w&&w>=e) {l=q*100+w*10+e;m=e*100+w*10+q;return;}
+	if(q>=e&&e>=w) {l=q*100+e*10+w;m=w*100+e*10+q;return;}
+	if(w>=q&&q>=e) {l=w*100+q*10+e;m=e*100+q*10+w;return;}
+	if(w>=e&&e>=q) {l=w*100+e*10+q;m=q*100+e*10+w;return;}
+	if(e>=q&&q>=w) {l=e*100+q*10+w;m=w*100+q*10+e;return;}
+	else {l=e*100+w*10+q;m=q*100+w*10+e;return;}
+}
+void did(int x)
+{
+	if(x==495) return;
+	int a,b,c;
+	c=x%10;
+	b=(x/10)%10;
+	a=x/100;
+	dodo(a,b,c);
+	r=l-m;
+	in[z][0]=l;
+	in[z][1]=m;
+	in[z][2]=r;
+	z++;
+	did(r);
+}
+void print()
+{
+	for(int i=0;i<z;++i)
+		printf("%d: %d - %d = %d\n",i+1,in[i][0],in[i][1],in[i][2]);
+	return;
+}
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	if(n==495) {printf("1: 954 - 459 = 495");return 0;}
+	did(n);
+	print();
+	return 0;
+} 

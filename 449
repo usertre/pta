@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main()
+{
+	int x,count=0;
+	scanf("%d",&x);
+	for(int i=x/5;i>0;--i)
+	  for(int j=(x-5*i);j>0;--j)
+	    if(5*i+2*j+(x-5*i-2*j)==x&&(x-5*i-2*j>0)) {count++;printf("fen5:%d, fen2:%d, fen1:%d, total:%d\n",i,j,(x-5*i-2*j),i+j+(x-5*i-2*j));}
+	printf("count = %d",count);
+	return 0;
+}

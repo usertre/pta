@@ -1,0 +1,11 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int a,b,c;
+	scanf("%d%d%d",&a,&b,&c);
+	if(a+b>c&&a+c>b&&b+c>a)
+		printf("area = %.2lf; perimeter = %d.00",sqrt((a+b+c)*(a+b-c)*(a+c-b)*(b+c-a)*(1.0/16.0)),a+b+c);
+	else printf("These sides do not correspond to a valid triangle");
+	return 0;
+}

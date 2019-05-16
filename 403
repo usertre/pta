@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+  int a,b,h1,h2,m1,m2,h,m;
+  scanf("%d%d",&a,&b);
+  m1=a%100;h1=a/100;
+  m2=b%100;h2=b/100;
+  m=h2*60+m2-h1*60-m1;
+  h=m/60;
+  m%=60;
+  if(h<10)
+  {
+    if(m<10)
+      printf("0%d:0%d",h,m);
+    else 
+      printf("0%d:%d",h,m);
+  }
+  else
+  {
+    if(m<10)
+      printf("%d:0%d",h,m);
+    else
+      printf("%d:%d",h,m);
+  }
+  return 0;
+}

@@ -1,0 +1,14 @@
+#include<stdio.h>
+int s[200];
+int main()
+{
+	char a;
+	while(scanf("%c",&a))
+	{
+		if(a=='\n') break;
+		else s[a]++;
+	}
+	scanf("%c",&a);
+	printf("%d",s[a]);
+	return 0;
+}

@@ -1,0 +1,33 @@
+#include<stdio.h>
+int d[2000];//go->1 gg->2 b->3 ly->4 tb->5 ts->6
+int main()
+{
+	int a,b,c,t=0;
+	scanf("%d%d",&a,&b);
+	for(int i=0;;++i)
+	{
+		scanf("%d",&c);
+		if(c<0) {d[i]=1;break;}
+		if(a==c&&i>2) d[i]=2;
+		else if(a==c&&!i) d[i]=3;
+		else if(a==c&&i) d[i]=4;
+		else if(c>a) d[i]=5;
+		else if(c<a) d[i]=6;
+		if(i==b-1) d[i+1]=1;
+	}
+	for(int i=0;i<b;++i)
+	{
+		if(t) break;
+		switch(d[i])
+		{
+			case 1:printf("Game Over");t++;break;
+			case 2:printf("Good Guess!");t++;break;
+			case 3:printf("Bingo!");t++;break;
+			case 4:printf("Lucky You!");t++;break;
+			case 5:printf("Too big\n");break;
+			case 6:printf("Too small\n");break;
+		}
+	}
+	if(!t) printf("Game Over");
+	return 0;
+}

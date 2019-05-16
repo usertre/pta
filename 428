@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main()
+{
+    char c;double a,b,p;
+	scanf("%lf%lf %c",&a,&b,&c);
+	if(b==90) {if(c=='m')p=6.95*a*0.95;else p=6.95*a*0.97;}
+	else if(b==93)  {if(c=='m')p=7.44*a*0.95;else p=7.44*a*0.97;}
+	else 
+	{if(c=='m')p=7.93*a*0.95;else p=7.93*a*0.97;}
+	printf("%0.2lf",p);
+	return 0;
+}

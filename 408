@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+	int a,b;double c;
+	scanf("%d%d",&a,&b);
+	if(a>b) printf("Invalid.");
+	else
+	{
+		printf("fahr celsius\n");
+		for(int i=a;i<=b;i+=2)
+		  {c=5*(i-32)/9.0;if(i!=b&&i!=b-1)printf("%d%6.1lf\n",i,c);else printf("%d%6.1lf",i,c);}
+	}
+	return 0;
+}

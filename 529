@@ -1,0 +1,14 @@
+#include<stdio.h>
+int t[200];
+int main()
+{
+	char a;
+	while(scanf("%c",&a))
+	{
+		if(a=='\n') break;
+		else t[a]++;
+	}
+	for(int i=0;i<200;++i)
+	if(t[i]) printf("%c",i);
+	return 0;
+}

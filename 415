@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+  int a;
+  long long sum=0,k=1;
+  scanf("%d",&a);
+  for(int i=1;i<=a;++i)
+  {
+    k*=i;
+    sum+=k;
+  }
+  printf("%lld",sum);
+  return 0;
+}

@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main()
+{
+  int i;
+  for(i=21;;i+=11)
+    if(i%6==5&&i%7==4&&i%5==1) break;
+  printf("%d",i);
+  return 0;
+}

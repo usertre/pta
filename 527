@@ -1,0 +1,27 @@
+#include<stdio.h>
+char a[100];
+int main()
+{
+	char b;int z=0,t=0,tt=0;
+	while(scanf("%c",&b))
+	{
+		if(b=='#') break;
+		if(b=='-'&&!tt) t=1;
+		if((b>='0'&&b<='9')||(b>='a'&&b<='f')||(b>='A'&&b<='F'))
+			{a[z++]=b;if(t&!tt) {t=2;tt=1;}else if(!t&&!tt){t=-1;tt=1;}}
+	}
+	int sum=0;
+	for(int i=z-1;i>=0;--i)
+	{
+		int temp=1;
+		for(int j=1;j<=z-1-i;++j)
+		  temp*=16;
+		if(a[i]>='0'&&a[i]<='9') temp*=(a[i]-'0');
+		else if(a[i]>='A'&&a[i]<='F') temp*=(a[i]-'A'+10);
+		else temp*=(a[i]-'a'+10);
+		sum+=temp;
+	}
+	if(t==2) printf("-%d",sum);
+	else printf("%d",sum);
+	return 0;
+}

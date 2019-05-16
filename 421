@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+	char a;int b=0,c=0,d=0,e=0;
+	for(int i=1;i<=10;++i)
+	{
+		a=getchar();
+		if((a>='A'&&a<='Z')||(a>='a'&&a<='z'))
+		  b++;
+		else if(a==' '||a=='\n')
+		  c++;
+		else if(a>='0'&&a<='9')
+		  d++;
+		else e++;
+	}
+	printf("letter = %d, blank = %d, digit = %d, other = %d",b,c,d,e);
+	return 0;
+}

@@ -1,0 +1,27 @@
+#include<stdio.h>
+int s[6][6];
+int main()
+{
+	int n,bo=0;
+	scanf("%d",&n);
+	for(int i=0;i<n;++i)
+	  for(int j=0;j<n;++j)
+	    scanf("%d",&s[i][j]);
+	for(int i=n-1;i>=0;--i)
+	{
+		int max=s[i][n-1],m=n-1;
+		for(int j=n-1;j>=0;--j)
+		  if(s[i][j]>max) {max=s[i][j];m=j;}
+		int f=1,min=s[i][m];
+		for(int j=n-1;j>=0;--j)
+		  if(s[j][m]<min) {f=0;break;}
+		if(f)
+		{
+			printf("%d %d",i,m);
+			bo=1;
+			break;
+		}
+	}
+	if(!bo) printf("NONE");
+	return 0;
+}

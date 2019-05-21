@@ -1,0 +1,20 @@
+#include<stdio.h>
+double sum;
+int s[20000];
+int main()
+{
+	int n,m,*q=NULL,*w=NULL; 
+	scanf("%d",&n);
+	scanf("%d",&s[0]);
+	q=&s[0];w=&s[0];
+	sum+=s[0];
+	for(int i=1;i<n;++i)
+	{
+		scanf("%d",&s[i]);
+		sum+=s[i];
+		if(s[i]>*q) q=&s[i];
+		if(s[i]<*w) w=&s[i];
+	}
+	printf("average = %.2lf\nmax = %d.00\nmin = %d.00",sum/n,*q,*w);
+	return 0;
+}//没有动态数组，用了指针。

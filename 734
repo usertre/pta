@@ -1,0 +1,11 @@
+double f( int n, double a[], double x )
+{
+	double sum=0;
+	for(int i=n;i>=1;--i)
+	{
+		sum+=a[i];
+		sum*=x;
+	}
+	sum+=a[0];
+	return sum;
+}

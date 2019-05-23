@@ -1,0 +1,11 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	double cm;
+	cin>>cm;
+	cm/=100;
+	int foot=cm/0.3048,inch=((cm/0.3048-foot)*12);
+	cout<<foot<<' '<<inch;
+	return 0;
+}

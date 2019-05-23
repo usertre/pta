@@ -1,0 +1,17 @@
+#include<iostream>
+#include<cstdio>
+using namespace std;
+int main()
+{
+	int a,b;
+	cin>>a>>b;
+	int h,m,temp;
+	h=a/100;
+	m=a%100;
+	temp=h*60+m+b;
+	h=temp/60;
+	m=temp%60;
+	if(m) cout<<h<<m;
+	else cout<<h<<m<<"0";
+	return 0;
+}

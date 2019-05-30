@@ -1,0 +1,14 @@
+int ArrayShift( int a[], int n, int m )
+{
+	m%=n;
+	int b[MAXN],z=0;
+	for(int i=n-m;;++i)
+	{
+		if(i==n) i-=n;
+		b[z]=a[i];
+		z++;
+		if(i==n-m-1) break;
+	}
+	for(int i=0;i<n;++i) a[i]=b[i];
+	return 0;
+}

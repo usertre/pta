@@ -1,0 +1,18 @@
+#include<stdio.h>
+int z[10000];double sum;
+int main()
+{
+	int n,m,*q=NULL,*w=NULL;
+	scanf("%d",&n);
+	scanf("%d",&z[0]);sum+=z[0];
+	q=&z[0];w=&z[0];
+	for(int i=1;i<n;++i)
+	{
+		scanf("%d",&z[i]);
+		sum+=z[i];
+		if(z[i]>*q) q=&z[i];
+		if(z[i]<*w) w=&z[i];
+	}
+	printf("average = %.2lf\nmax = %d.00\nmin = %d.00",sum/(n*1.0),*q,*w);
+	return 0;
+}

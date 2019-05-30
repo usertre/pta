@@ -1,0 +1,15 @@
+void strmcpy( char *t, int m, char *s )
+{
+	for(int i=0;i<MAXN;++i) s[i]=0;
+	if(!t[m-1]) return;
+	else
+	{
+		int z=0;
+		for(int i=m-1;;++i)
+		{
+			if(!t[i]) break;
+			else s[z++]=t[i]; 
+		}
+	}
+	return;
+}

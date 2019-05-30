@@ -1,0 +1,6 @@
+void splitfloat( float x, int *intpart, float *fracpart )
+{
+	*intpart=0;float f=x;
+	while(x>=1)  {*intpart+=1;x-=1;}
+	*fracpart=f-*intpart;
+}

@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<string.h>
+char a[200],b[200];
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	getchar();
+	gets(a);
+	for(int i=1;i<n;++i)
+	{
+		gets(b);
+		if(strlen(b)>strlen(a)) strcpy(a,b);
+	}
+	printf("The longest is: %s",a);
+	return 0;
+} 

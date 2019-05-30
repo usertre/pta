@@ -1,0 +1,13 @@
+void f( char *p )
+{
+	int len=0,t;char *q=p;
+	while(*p) {len++;p++;}
+	t=len;
+	len--;
+	for(int i=0;i<=len/2;++i)
+	{
+		char temp=q[i];
+		q[i]=q[len-i];
+		q[len-i]=temp;
+	}
+}

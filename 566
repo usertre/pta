@@ -1,0 +1,24 @@
+#include<stdio.h>
+struct list{
+	char n[31];
+	double p;
+};struct list book[10];
+int main()
+{
+	int n;double max=-1,min=999999;
+	scanf("%d",&n);
+	for(int i=0;i<n;++i)
+	{
+		getchar();
+		gets(book[i].n);
+		scanf("%lf",&book[i].p);
+		//scanf("%s%lf",book[i].n,&book[i].p);
+		if(book[i].p>max) max=book[i].p;
+		if(book[i].p<min) min=book[i].p;
+	}
+	for(int i=0;i<n;++i)
+		if(book[i].p==max) printf("%.2lf, %s\n",max,book[i].n);
+	for(int i=0;i<n;++i)
+		if(book[i].p==min) printf("%.2lf, %s",min,book[i].n);
+	return 0;
+}

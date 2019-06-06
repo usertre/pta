@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+	int a,b,c,d;
+	scanf("%d/%d %d/%d",&a,&b,&c,&d);
+	int max,min;
+	if(d>b) {max=d;min=b;}else {max=b;min=d;}
+	int q=max%min;
+	while(q)
+	{
+		max=min;min=q;q=max%min;
+	}
+	int x=a*(d/min),y=c*(b/min);
+	if(x>y) printf("%d/%d > %d/%d",a,b,c,d);
+	else if(x<y) printf("%d/%d < %d/%d",a,b,c,d);
+	else if(x==y) printf("%d/%d = %d/%d",a,b,c,d);
+	return 0;
+}

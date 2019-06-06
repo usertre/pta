@@ -1,0 +1,22 @@
+#include<stdio.h>
+struct stu{
+	char l[6],n[10];
+	float sc;
+}; struct stu s[10];
+int main()
+{
+	int a;float sum=0;
+	scanf("%d",&a);
+	for(int i=0;i<a;++i)
+	{
+		/*for(int j=0;j<5;++j) scanf("%c",&s[i].l);
+		scanf("%s%f",s[i].n,&s[i].sc);*/
+		scanf("%s%s%f",s[i].l,s[i].n,&s[i].sc);
+		sum+=s[i].sc;
+	}
+	sum/=(a*1.0);
+	printf("%.2f\n",sum);
+	for(int i=0;i<a;++i)
+		if(s[i].sc<sum) printf("%s %s\n",s[i].n,s[i].l); 
+	return 0;
+}

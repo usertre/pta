@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+	int h,m,s,n;
+	scanf("%d:%d:%d%d",&h,&m,&s,&n);
+	int sum=0;
+	sum+=(s+m*60+h*60*60+n);
+	sum%=86400;
+	h=sum/(60*60);m=(sum-h*60*60)/60;s=sum-h*60*60-m*60;
+	if(h<10) printf("0%d:",h);
+	else printf("%d:",h);
+	if(m<10) printf("0%d:",m);
+	else printf("%d:",m);
+	if(s<10) printf("0%d",s);
+	else printf("%d",s);
+	return 0;
+}

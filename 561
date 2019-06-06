@@ -1,0 +1,19 @@
+#include<stdio.h>
+struct cc{
+	char name[20];
+	float a,b,c;
+};struct cc z[10000];
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	for(int i=0;i<n;++i)
+	{
+		scanf("%s",z[i].name);
+		scanf("%f%f%f",&z[i].a,&z[i].b,&z[i].c);
+	}
+	for(int i=0;i<n-1;++i)
+		printf("%s %.2f\n",z[i].name,z[i].a+z[i].b-z[i].c);
+	printf("%s %.2f",z[n-1].name,z[n-1].a+z[n-1].b-z[n-1].c);
+	return 0;
+}

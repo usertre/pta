@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main()
+{
+	double a,b,c,d;
+	scanf("%lf%lf%lf%lf",&a,&b,&c,&d);
+	double x=a+c,y=b+d;
+	if(a+c>-0.05&&a+c<0) x=0;
+	if(b+d>-0.05&&b+d<0) y=0;
+	printf("(%.1lf, %.1lf)",x,y);
+	return 0;
+}
